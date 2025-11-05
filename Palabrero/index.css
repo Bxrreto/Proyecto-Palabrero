@@ -1,0 +1,529 @@
+/* ==========================
+   Estilos base y generales
+========================== */
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: #222;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Marcellus', serif;
+  color: #1c1c1c;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ==========================
+   Header principal
+========================== */
+.header {
+  position: relative;
+  height: 100vh;
+  background: url('fondo.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #0f5132;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #198754;
+}
+
+
+
+/* ==========================
+   Sección: Introducción
+========================== */
+.intro-palabrero {
+  padding: 80px 15%;
+  background: #f9fafb;
+}
+
+.intro-palabrero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.resaltado {
+  color: #198754;
+  font-weight: bold;
+}
+
+/* ==========================
+   Sección: Definición del problema
+========================== */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 12%;
+  background-color: #fff;
+}
+
+.intro .text {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #0f5132;
+}
+
+.intro p {
+  font-size: 1.1rem;
+}
+
+.graphic {
+  flex: 1;
+  height: 300px;
+  background: url('grafico.png') center/contain no-repeat;
+}
+
+/* ==========================
+   Sección: Objetivos
+========================== */
+.objetivos-section {
+  padding: 80px 10%;
+  background: #f3f6f4;
+  text-align: center;
+}
+
+.objetivos-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #0f5132;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* --- Tarjetas de Objetivos (efecto flip correcto) --- */
+.vision-card {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  perspective: 1000px;
+}
+
+.vision-card .front,
+.vision-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: transform 0.8s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cara frontal */
+.vision-card .front {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.vision-card .front img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vision-card .front h3 {
+  color: #2e7d32;
+  font-size: 1.3rem;
+}
+
+/* Cara trasera */
+.vision-card .back {
+  background: #3b7d3b;
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Efecto flip */
+.vision-card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.vision-card:hover .back {
+  transform: rotateY(360deg);
+}
+
+
+
+/* ==========================
+   NUEVAS SECCIONES
+========================== */
+
+/* Alcance */
+#alcance {
+  padding: 80px 12%;
+  background: #fff;
+  text-align: center;
+}
+
+#alcance h1 {
+  color: #0f5132;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+#alcance p {
+  font-size: 1.15rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Metodología */
+/* --- Metodología --- */
+#metodologia {
+  padding: 100px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+#metodologia h2 {
+  color: #2f6f3a;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.metodologia-descripcion {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Grid de fases */
+.metodologia-fases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Tarjetas de fase */
+.fase {
+  background: #f4f8f4;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.fase:hover {
+  transform: translateY(-8px);
+}
+
+.fase h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* ✅ Centrar la última tarjeta cuando hay número impar */
+.metodologia-fases .fase:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 250px; /* tamaño igual a las demás */
+}
+
+/* ==========================
+   Sección: Impacto
+========================== */
+#impacto {
+  padding: 100px 12%;
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+#impacto h2 {
+  color: #0f5132;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+#impacto p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+#impacto .impacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+#impacto .impacto-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 25px;
+  transition: transform 0.3s ease;
+}
+
+#impacto .impacto-card:hover {
+  transform: translateY(-8px);
+}
+
+#impacto .impacto-card h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+#impacto .impacto-card p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Resultados */
+#resultados {
+  padding: 80px 12%;
+  background-color: #f3f6f4;
+  text-align: center;
+}
+
+#resultados h2 {
+  color: #0f5132;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+#resultados p {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.15rem;
+}
+
+/* ==========================
+  Cierre
+========================== */
+.cierre {
+  text-align: center;
+  background: #0f5132;
+  color: white;
+  padding: 80px 20px;
+}
+
+.cierre h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: #0f5132;
+}
+
+footer {
+  background-color: #111;
+  color: #bbb;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+/* --- Ajuste de jerarquía y espaciado de los objetivos --- */
+
+/* Sección completa */
+.objetivos-section {
+  padding: 100px 10%;
+  background: #f1f8f4;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título general */
+.objetivos-section h2 {
+  color: #2f6f3a;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+/* Tarjeta grande (Objetivo general) */
+.vision-card.grande {
+  height: 380px; /* un poco más alta pero sin tapar */
+  margin-bottom: 80px; /* deja espacio antes del subtítulo */
+  z-index: 1;
+}
+
+/* Subtítulo de específicos */
+.subtitulo {
+  margin-top: 60px;
+  font-size: 1.8rem;
+  color: #2e7d32;
+  position: relative;
+  z-index: 2; /* asegura que quede por encima */
+}
+
+/* Grid de objetivos específicos */
+.vision-grid.especificos {
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+/* --- Ajuste visual del Objetivo General --- */
+.vision-card.grande {
+  width: 70%;               /* más angosta para centrarla visualmente */
+  height: 300px;            /* más baja */
+  margin: 0 auto 60px;      /* centrada con espacio inferior */
+  z-index: 1;
+}
+
+.vision-card.grande .front img {
+  height: 140px;            /* imagen más pequeña */
+}
+
+.vision-card.grande .front h3 {
+  font-size: 1.4rem;
+}
+
+.vision-card.grande .back p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+/* --- Logo en el encabezado --- */
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-right: -25px /* 🔹 Reduce este valor para acercar más el logo */
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+.intro-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 15px;
+  display: block;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.intro-palabrero img {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.graphic {
+  flex: 1;
+  height: 300px;
+  background: url('graf.png') center/contain no-repeat;
+}
+.vision-card.grande .front img {
+  width: 90%;               /* deja más espacio a los lados */
+  height: 280px;            /* mantiene buena altura */
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin: 40px auto -25px auto;  /* aumenta la margen arriba y abajo */
+  background-color: #fff;
+  padding: 10px;            /* más espacio interno tipo marco */
+}
+.imagen-alcance {
+  width: 50%;
+  max-width: 500px;
+  display: block;
+  margin: 40px auto 25px auto;
+  border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
